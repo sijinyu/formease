@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 128px;
+    height: 128px;
+    overflow: hidden;
+  }
+  .icon {
+    width: 128px;
+    height: 128px;
+    background: linear-gradient(135deg, #4f7df9 0%, #6c3fd6 100%);
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .letter {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 72px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .cursor {
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    width: 24px;
+    height: 24px;
+  }
+  .cursor svg {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
+  }
+</style>
+</head>
+<body>
+  <div class="icon">
+    <span class="letter">F</span>
+    <div class="cursor">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4L10.5 20L13 13L20 10.5L4 4Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

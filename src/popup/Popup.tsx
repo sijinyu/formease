@@ -15,6 +15,8 @@ function Popup() {
 
   useEffect(() => {
     loadProfile().then(setProfile);
+    // Request background to inject content script into active tab
+    chrome.runtime.sendMessage({ type: "INJECT_CONTENT_SCRIPT" }).catch(() => {});
   }, []);
 
   // Auto-save on profile change (debounced 1s)
