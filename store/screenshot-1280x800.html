@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=800">
+<title>FormEase Screenshot</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 800px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 0 80px;
+  }
+
+  .left {
+    flex: 1;
+    color: white;
+  }
+
+  .left h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .left p {
+    font-size: 22px;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .right {
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  /* Browser mockup */
+  .browser {
+    width: 520px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  .browser-bar {
+    background: #f1f3f4;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #ff5f57; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #28ca41; }
+
+  .url-bar {
+    flex: 1;
+    margin-left: 12px;
+    background: white;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #666;
+  }
+
+  .browser-content {
+    padding: 24px;
+    position: relative;
+  }
+
+  /* Form mockup */
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-label {
+    font-size: 13px;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #111;
+    background: white;
+  }
+
+  .form-input.filled {
+    border-color: #3b82f6;
+    background: #eff6ff;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  .form-row .form-group {
+    flex: 1;
+  }
+
+  /* FAB button */
+  .fab {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .fab-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #ef4444;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Toast */
+  .toast {
+    position: absolute;
+    bottom: 72px;
+    right: 16px;
+    background: #16a34a;
+    color: white;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toast-undo {
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>FormEase</h1>
+      <p>
+        Click once, fill every form.<br>
+        No account. No cloud. 100% local.
+      </p>
+      <div class="badges">
+        <span class="badge">One-Click Fill</span>
+        <span class="badge">Keyboard Shortcuts</span>
+        <span class="badge">Undo Support</span>
+        <span class="badge">Auto-Save</span>
+        <span class="badge">Export / Import</span>
+        <span class="badge">100% Free</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="browser">
+        <div class="browser-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <div class="url-bar">example.com/signup</div>
+        </div>
+        <div class="browser-content">
+          <div class="form-row">
+            <div class="form-group">
+              <span class="form-label">Name</span>
+              <div class="form-input filled">John Doe</div>
+            </div>
+            <div class="form-group">
+              <span class="form-label">Email</span>
+              <div class="form-input filled">john@example.com</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <span class="form-label">Phone</span>
+              <div class="form-input filled">010-1234-5678</div>
+            </div>
+            <div class="form-group">
+              <span class="form-label">Company</span>
+              <div class="form-input filled">Acme Inc.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="form-label">Address</span>
+            <div class="form-input filled">Seoul, South Korea</div>
+          </div>
+          <div class="form-group">
+            <span class="form-label">Bio</span>
+            <div class="form-input" style="height:60px;"></div>
+          </div>
+
+          <div class="fab">
+            <span>F</span>
+            <span class="fab-badge">5</span>
+          </div>
+          <div class="toast">
+            5 fields filled
+            <span class="toast-undo">Undo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
